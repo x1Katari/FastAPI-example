@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "smit"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.100.0"
+uvicorn = {extras = ["standart"], version = "^0.23.0"}
+tortoise-orm = {extras = ["asyncpg"], version = "^0.19.3"}
+python-multipart = "^0.0.6"
+aerich = "^0.7.1"
+pydantic-settings = "^2.0.2"
+
+
+
+[tool.aerich]
+tortoise_orm = "settings.DATABASE_CONFIG"
+location = "./migrations"
+src_folder = "./."
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

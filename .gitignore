@@ -1,0 +1,47 @@
+# .gitignore
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDEs / editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+*.pyc
+
+# OS related
+.DS_Store
+Thumbs.db
+
+# virtualenv
+.env
+.venv/
+venv/
+ENV/
+
+# Poetry
+/poetry.lock
+
+
+# Log files
+*.log
+
+# Database
+*.db
+
+# csv, etc
+*.csv
+*.xlsx
+
+# Other
+*.tmp
+*~
