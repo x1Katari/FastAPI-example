@@ -42,16 +42,6 @@ async def upload_cargo_rates(file: UploadFile = File(...)):
         return {"status": 400, "detail": "incorrect file"}
 
 
-@app.post("/cargos", response_model=Cargo_Pydantic)
-async def create_or_update_cargo(cargo: CargoIn_Pydantic):
-    cargo_obj = await Cargo.get_or_none(cargo_type=cargo.cargo_type)
-    if cargo_obj:
-        cargo_obj = await Cargo.create(**cargo.dict(exclude_unset=True), modified_at=datetime.now())
-    else:
-        cargo_obj = await Cargo.create(**cargo.dict(exclude_unset=True), modified_at=datetime.now())
-
-    return Cargo_Pydantic(**cargo_obj.__dict__)
-
 
 @app.get('/insurance_cost')
 async def get_insurance_cost(cargo_type: str, declared_value: float, date: str =""):
